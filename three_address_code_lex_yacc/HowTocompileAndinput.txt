@@ -1,0 +1,14 @@
+yacc -d 3ac.y
+lex 3ac.l
+gcc lex.yy.c y.tab.c -o threeac -ll
+./threeac
+
+input:
+
+(7 + 2) * (3 - 1) / 4
+
+10 % 3
+
+(5 + 3) * 2
+
+6 + 2 * 3

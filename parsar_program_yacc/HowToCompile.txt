@@ -1,0 +1,4 @@
+lex parse.l
+yacc -d parse.y
+gcc lex.yy.c y.tab.c -o parser
+./parser
