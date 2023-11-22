@@ -1,57 +1,95 @@
-str_value = "hello"  # Initialize the string
+a = input("Enter a string: ")
+b = input("Enter a string: ")
 
-# 1. Function to calculate the length of a string
-def length(input_str):
-    return len(input_str)
 
-# 2. Function to concatenate the string with " world"
-def concat(input_str):
-    return input_str + " world"
+#1. Printing lengths of strings
+count1 = 0
+count2 = 0
+for i in a:
+    count1 = count1+1
 
-# 3. Function to find the character at a specified index
-def index(input_str, i):
-    if i < len(input_str):
-        return input_str[i]
+for j in b:
+    count2 =  count2+1
+print("Length of ", a ," is: ", count1)
+print("Length of ", b ," is: ", count2)
+
+
+#2. Printing largest string
+if(count1>count2):
+    print("Largest String is: ")
+    print(a)
+else:
+    print(b)
+
+
+#3. Concatenation 
+res_conc = ""
+for char in a:
+    res_conc = res_conc+char
+for char in b:
+    res_conc = res_conc+char
+print(res_conc)
+
+
+#4. Reversing the string
+revs = ""
+for char in a:
+    revs = char+revs
+print("Reverse of ", a ," is: ", revs)
+
+
+# 5. Uppercase Conversion
+uppercase_string = ""
+for char in a:
+    if 'a' <= char <= 'z':
+        uppercase_string += chr(ord(char) - 32)
     else:
-        return "Index out of range"
+        uppercase_string += char
+print("Uppercase:", uppercase_string)
 
-# 4. Function to reverse the string
-def reverse(input_str):
-    return input_str[::-1]
 
-# 5. Function to convert the string to uppercase
-def uppercase(input_str):
-    return input_str.upper()
+# 6. Lowercase Conversion
+lowercase_string = ""
+for char in b:
+    if 'A' <= char <= 'Z':
+        lowercase_string += chr(ord(char) + 32)
+    else:
+        lowercase_string += char
+print("Lowercase:", lowercase_string)
 
-# 6. Function to convert the string to lowercase
-def lowercase(input_str):
-    return input_str.lower()
 
-# 7. Function to split the string into words
-def split_str(input_str):
-    return input_str.split()
+# 7. Checking Palindrome
+is_palindrome = True
+for i in range(count1 // 2):
+    if a[i] != a[count1 - 1 - i]:
+        is_palindrome = False
+        break
+print("Palindrome:", is_palindrome)
 
-# 8. Function to check if a string ends with a specified suffix
-def custom_endswith(string, suffix):
-    return string.endswith(suffix)
 
-# 9. Function to check if a string is alphanumeric
-def custom_isalnum(input_str):
-    return input_str.isalnum()
+# 8. Extracting Substring
+string = "Hello, world!"
+start_index = 7
+end_index = 12
+substring = ""
+for i in range(start_index, end_index):
+    substring += string[i]
+print("Substring:", substring)
 
-# 10. Function to check if a string contains only alphabetic characters
-def custom_isalpha(input_str):
-    return input_str.isalpha()
 
-# Function calls
-print("1. Length of the string:", length(str_value))
-print("2. Concatenated string:", concat(str_value))
-index_input = int(input("3. Enter the index: "))
-print(f"Character at index {index_input}: {index(str_value, index_input)}")
-print("4. Reversed string:", reverse(str_value))
-print("5. Uppercase:", uppercase(str_value))
-print("6. Lowercase:", lowercase(str_value))
-print("7. Split string:", split_str(str_value))
-print("8. Custom endswith:", custom_endswith("Hello, world!", "world!"))
-print("9. Custom isalnum:", custom_isalnum(str_value))
-print("10. Custom isalpha:", custom_isalpha(str_value))
+# 9. Removing Spaces
+string = " Hello, world! "
+no_spaces = ""
+for char in string:
+    if char != ' ':
+        no_spaces += char
+print("No Spaces:", no_spaces)
+
+
+# 10. Counting Words
+string = "Hello, world! Welcome to Python programming."
+word_count = 1
+for char in string:
+    if char == ' ':
+        word_count += 1
+print("Word Count:", word_count)
